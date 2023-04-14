@@ -2,26 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .navLinkBtn {
+    @apply py-1 px-3 transform transition-all delay-75 ease-in-out text-black hover:bg-primary bg-slate-100 rounded-md border border-transparent hover:text-white;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .activeNavLinkBtn {
+    @apply py-1 px-3 transform transition-all delay-75 ease-in-out bg-primary  rounded-md text-white border border-transparent;
+  }
+
+  .pendingNavLinkBtn {
+    @apply py-1 px-3 transform transition-all delay-75 ease-in-out text-black bg-slate-100 rounded-md border border-primary;
+  }
+
+  .primaryButton {
+    @apply py-2 px-3 transform transition-all delay-75 ease-in-out bg-primary text-white rounded-md;
+  }
+
+  .whiteButton {
+    @apply py-2 px-3 transform transition-all delay-75 ease-in-out border border-white text-white rounded-md;
+  }
+
+  .secondaryButton {
+    @apply py-2 px-3 transform transition-all delay-75 ease-in-out bg-dark text-primary rounded-md;
+  }
 }
